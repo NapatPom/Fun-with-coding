@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .calculator {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input, select, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e4bb7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <h2>Basic Calculator</h2>
+        <input type="text" id="num1" placeholder="Enter first number">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="num2" placeholder="Enter second number">
+        <br>
+        <button id="calculate">Try me!</button>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#calculate").click(function() {
+                let num1 = parseInt($("#num1").val());
+                let num2 = parseInt($("#num2").val());
+                let operator = $("#operator").val();
+
+                if (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0) {
+                    alert("Error :(");
+                    return;
+                }
+
+                if ((operator === "/" || operator === "%") && num2 === 0) {
+                    alert("It’s over 9000!");
+                    console.log("It’s over 9000!");
+                    return;
+                }
+
+                let result;
+                switch (operator) {
+                    case "+":
+                        result = num1 + num2;
+                        break;
+                    case "-":
+                        result = num1 - num2;
+                        break;
+                    case "*":
+                        result = num1 * num2;
+                        break;
+                    case "/":
+                        result = num1 / num2;
+                        break;
+                    case "%":
+                        result = num1 % num2;
+                        break;
+                    default:
+                        alert("Error :(");
+                        return;
+                }
+
+                alert("Result: " + result);
+                console.log("Result: " + result);
+            });
+
+            setInterval(function() {
+                alert("Please, use me...");
+            }, 30000);
+        });
+    </script>
+
+</body>
+</html>
