@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    text-align: center;
+}
+
+.parallax {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image1 {
+    background-image: url('https://c.wallhere.com/photos/65/69/1600x900_px_clouds_Hills_landscape_mountains_nature_Trees-1555233.jpg!d');
+}
+
+.image2 {
+    background-image: url('https://content.dhamma.com/wp-content/uploads/pattern-plants.jpg');
+}
+
+.text {
+    color: white;
+    font-size: 24px;
+}
+
+.black-block {
+    background: black;
+    color: white;
+    padding: 150px;
+    font-size: 24px;
+    min-height: 300px;
+}
